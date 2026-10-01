@@ -1,0 +1,225 @@
+@import "tailwindcss";
+
+@theme {
+  /* Brand orange */
+  --color-orange-50: #fff4ed;
+  --color-orange-100: #ffe4d1;
+  --color-orange-200: #ffc6a3;
+  --color-orange-300: #ffa06b;
+  --color-orange-400: #ff7a3d;
+  --color-orange-500: #ff6417;
+  --color-orange-600: #e84e05;
+  --color-orange-700: #ba3d05;
+  --color-orange-800: #8f310b;
+  --color-orange-900: #742a0c;
+
+  /* Brand blue */
+  --color-blue-50: #eef4ff;
+  --color-blue-100: #d9e6ff;
+  --color-blue-200: #b3ccff;
+  --color-blue-300: #82aaff;
+  --color-blue-400: #4f84f5;
+  --color-blue-500: #2e64e0;
+  --color-blue-600: #1f4cc0;
+  --color-blue-700: #1a3d99;
+  --color-blue-800: #17337a;
+  --color-blue-900: #142b63;
+
+  /* Ink / gray - structural neutral */
+  --color-ink-50: #f4f5f7;
+  --color-ink-100: #e4e6ea;
+  --color-ink-200: #c7cbd3;
+  --color-ink-300: #9aa1ad;
+  --color-ink-400: #6b7280;
+  --color-ink-500: #4b5361;
+  --color-ink-600: #333a46;
+  --color-ink-700: #232935;
+  --color-ink-800: #171b23;
+  --color-ink-900: #0e1116;
+  --color-ink-950: #08090c;
+
+  --color-paper: #ffffff;
+
+  --font-display: var(--font-space-grotesk), "Segoe UI", sans-serif;
+  --font-body: var(--font-inter), "Segoe UI", sans-serif;
+  --font-mono-tech: var(--font-jetbrains-mono), ui-monospace, monospace;
+
+  --animate-fade-up: fade-up 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  --animate-fade-in: fade-in 0.6s ease-out forwards;
+  --animate-marquee: marquee 32s linear infinite;
+  --animate-shine: shine var(--duration) infinite linear;
+
+  @keyframes fade-up {
+    from {
+      opacity: 0;
+      transform: translateY(18px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  @keyframes shine {
+    0% {
+      background-position: 0% 0%;
+    }
+    50% {
+      background-position: 100% 100%;
+    }
+    to {
+      background-position: 0% 0%;
+    }
+  }
+  @keyframes marquee {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
+}
+
+:root {
+  color-scheme: dark;
+}
+
+* {
+  border-color: rgb(255 255 255 / 0.15);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  /* Fallback shown until the fixed Dither layer has loaded */
+  background: var(--color-ink-950);
+  color: #fff;
+  font-family: var(--font-body);
+  font-feature-settings: "cv11", "ss01";
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-display);
+  letter-spacing: -0.02em;
+}
+
+::selection {
+  background: var(--color-orange-500);
+  color: white;
+}
+
+/* Focus visibility for keyboard users */
+:focus-visible {
+  outline: 2px solid var(--color-orange-500);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+/* Reveal-on-scroll: hidden until .is-visible is added by JS */
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Blueprint grid backgrounds */
+.bg-grid-light {
+  background-image:
+    linear-gradient(to right, rgba(14, 17, 22, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(14, 17, 22, 0.05) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+.bg-grid-dark {
+  background-image:
+    linear-gradient(to right, rgba(255, 255, 255, 0.055) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.055) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+.bg-grid-dark-fine {
+  background-image:
+    linear-gradient(to right, rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+  background-size: 16px 16px;
+}
+
+.bg-radial-fade {
+  -webkit-mask-image: radial-gradient(ellipse 70% 60% at 50% 0%, black 40%, transparent 100%);
+  mask-image: radial-gradient(ellipse 70% 60% at 50% 0%, black 40%, transparent 100%);
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+  .reveal {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
+/* ShineBorder: gradient visible only as a thin ring. The mask shorthand must
+   come BEFORE mask-composite or it resets it and the gradient fills the box. */
+.shine-border-ring::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  box-sizing: border-box;
+  border-radius: var(--border-radius);
+  padding: var(--border-width);
+  background-image: var(--background-radial-gradient);
+  background-size: 300% 300%;
+  -webkit-mask: var(--mask-linear-gradient);
+  mask: var(--mask-linear-gradient);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+  will-change: background-position;
+  animation: shine var(--duration) infinite linear;
+}
+@media (prefers-reduced-motion: reduce) {
+  .shine-border-ring::before {
+    animation: none;
+  }
+}
