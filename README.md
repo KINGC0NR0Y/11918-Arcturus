@@ -1,180 +1,72 @@
-# 🚀 ARCTURUS #11918
+<div align="center">
 
-### **Guided by stars, driven by innovation**
+# ARCTURUS · FRC #11918
 
-<p align="center">
-  <strong>FIRST Robotics Competition Team #11918</strong><br>
-  Austin, Texas • Software • Hardware • CAD • Strategy • Business
-</p>
+**Engineering Beyond the Horizon.**
 
----
+A student-led *FIRST* Robotics Competition team from Austin, Texas.
 
-## 🌟 About Us
+[![Instagram](https://img.shields.io/badge/Instagram-@11918.arcturus-E4405F?logo=instagram&logoColor=white)](https://instagram.com/11918.arcturus)
+[![X](https://img.shields.io/badge/X-@GlennHSRobotics-000000?logo=x&logoColor=white)](https://x.com/GlennHSRobotics)
+[![Email](https://img.shields.io/badge/Email-Contact%20Us-0A66C2?logo=gmail&logoColor=white)](mailto:ftcgrizzlybots@gmail.com)
 
-**ARCTURUS #11918** is a student-led FIRST Robotics Competition team from Austin, Texas, driven by innovation, teamwork, and engineering. We bring together students with diverse skills in software, hardware, CAD, business, and strategy to design and build competitive robots. Through every season, we challenge ourselves to solve complex problems, learn from failure, and continuously improve our designs.
-
-> **Build. Compete. Innovate. Inspire.**
+</div>
 
 ---
 
-## 🤖 What We Do
+## About
 
-|   🧠 Software   |     ⚙️ Hardware    |    📐 CAD   |   📊 Strategy  |
-| :-------------: | :----------------: | :---------: | :------------: |
-|    Robot Code   | Mechanical Systems |  3D Design  | Match Analysis |
-|    Autonomous   |     Electrical     | Prototyping |    Scouting    |
-| Computer Vision |     Fabrication    | Engineering |  Game Strategy |
+ARCTURUS brings together students working in software, hardware, CAD, strategy, and business to design, build, and compete with robots in the *FIRST* Robotics Competition. Every season is an engineering problem: we design, prototype, test, analyze, and iterate until it works — and then we make it better.
 
-We approach every challenge as an engineering problem — **design, prototype, test, analyze, and iterate.**
+## Subteams
 
----
+| Subteam      | Focus                                              |
+| ------------ | -------------------------------------------------- |
+| **Software** | Robot code, autonomous routines, computer vision   |
+| **Hardware** | Mechanical systems, electrical, fabrication        |
+| **CAD**      | 3D design, prototyping, engineering drawings       |
+| **Strategy** | Match analysis, scouting, game strategy            |
+| **Business** | Sponsorships, outreach, branding                   |
 
-## 🛰️ Our Mission
+## Tech Stack
 
-Our goal isn't simply to build a robot.
+- **Languages:** Java, Python, JavaScript / TypeScript
+- **Robotics:** WPILib, path planning, real-time control, computer vision
+- **Engineering:** CAD, mechanical and electrical design, manufacturing
 
-We aim to create an environment where students can:
+## How We Work
 
-* 🔧 Build real engineering systems
-* 💻 Develop production-level software
-* 🧠 Solve complex problems
-* 🤝 Collaborate across disciplines
-* 📈 Learn from failure and iteration
-* 🌎 Inspire others through STEM and outreach
-
----
-
-## 🛠️ Technology
-
-### Software
-
-```text
-Programming
-├── Java
-├── Python
-└── JavaScript / TypeScript
-
-Robotics
-├── WPILib
-├── Path Planning
-├── Autonomous Systems
-├── Computer Vision
-└── Real-Time Control
+```
+Design  →  Build  →  Test  →  Analyze  →  Iterate
 ```
 
-### Engineering
+No subsystem is finished on the first try. We define the problem, build a prototype, push it to its limits, use data to find what's weak, and repeat.
 
-```text
-Design
-├── CAD
-├── Mechanical Design
-├── Electrical Systems
-├── Prototyping
-└── Manufacturing
-```
+## Seasons
 
----
+| Season | Robot | Events | Status      |
+| :----: | :---: | :----: | ----------- |
+| 2027   | TBD   | TBD    | In progress |
+| 2026   | TBD   | TBD    | —           |
 
-## 🧪 Engineering Philosophy
+## Outreach
 
-### **DESIGN → BUILD → TEST → ANALYZE → ITERATE**
+Robotics doesn't end when the match does. ARCTURUS takes part in STEM outreach, education, and community events to bring more students into engineering and technology.
 
-We believe the best robots aren't created on the first attempt.
+## Sponsors
 
-Every subsystem goes through an iterative engineering process:
+Thank you to the organizations that make our work possible:
 
-**01 — Design**
-Define the problem and develop a solution.
+**Gene Haas Foundation** · **Subaru** · **Qualcomm** · **Polymaker** · **FRCtees** · **Firefly Aerospace** · **Fabworks** · **OnlineMetals.com**
 
-**02 — Build**
-Turn the concept into a physical or digital prototype.
+Interested in supporting the team? [Reach out by email](mailto:ftcgrizzlybots@gmail.com).
 
-**03 — Test**
-Push the system to its limits.
+## License
 
-**04 — Analyze**
-Use data and observations to identify weaknesses.
-
-**05 — Iterate**
-Improve the design and repeat.
+Unless otherwise noted, software in this repository is maintained by ARCTURUS #11918. See individual directories for project-specific licenses.
 
 ---
 
-## 📡 Current Season
-
-### **ARCTURUS // 2027**
-
-> **Mission Status: `ACTIVE`**
-
-**Primary Objectives**
-
-* 🤖 Develop a competitive robot
-* 🧠 Build reliable autonomous systems
-* ⚙️ Optimize mechanical performance
-* 💻 Develop robust robot software
-* 🏆 Compete at the highest level
-* 🌎 Expand our STEM outreach
-
----
-
-## 🏆 Competitions
-
-Our repositories contain the software, documentation, and engineering work developed throughout our competition seasons.
-
-| Season | Robot | Events |   Highlights   |
-| :----: | :---: | :----: | :------------: |
-|  2027  |  TBD  |   TBD  | 🚀 In Progress |
-|  2026  |  TBD  |   TBD  |        —       |
-
----
-
-## 🌎 Beyond the Robot
-
-Robotics doesn't end when the match does.
-
-ARCTURUS participates in STEM outreach, education, community events, and other initiatives designed to introduce more students to engineering and technology.
-
-We want to leave every community we visit with more curiosity than we found it with.
-
----
-
-## 📸 Follow Our Journey
-
-**Website:** `Coming Soon`
-**Instagram:** `@11918.arcturus`
-**X:** `@GlennHSRobotics`
-**Email:** [ftcgrizzlybots@gmail.com](mailto:ftcgrizzlybots@gmail.com)
-
----
-
-## 🤝 Sponsors & Partners
-
-We are grateful for the organizations that support our team and make our engineering work possible.
-
-**Gene Haas Foundation** • **Subaru** • **Qualcomm** • **Polymaker** • **FRCtees** • **Firefly Aerospace** • **Fabworks** • **OnlineMetals.com**
-
-Interested in supporting ARCTURUS?
-
-**Get in touch with our team.**
-
----
-
-## 📜 License
-
-Unless otherwise specified, software in this repository is maintained by **ARCTURUS #11918**.
-
-See individual directories for project-specific licensing information.
-
----
-
-<p align="center">
-
-### ⭐ **BUILD THE FUTURE. REACH BEYOND.**
-
-**ARCTURUS #11918**
-*Austin, Texas*
-
-</p>
-
-See `docs/PROJECT-PLAN.md` for the season rollout plan and team
-responsibilities this site was originally built against.
+<div align="center">
+<sub>ARCTURUS #11918 · Austin, Texas · <i>Build the future. Reach beyond.</i></sub>
+</div>
