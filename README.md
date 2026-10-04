@@ -16,7 +16,7 @@ A student-led *FIRST* Robotics Competition team from Austin, Texas.
 
 ## About
 
-ARCTURUS brings together students working in software, hardware, CAD, strategy, and business to design, build, and compete with robots in the *FIRST* Robotics Competition. Every season is an engineering problem: we design, prototype, test, analyze, and iterate until it works — and then we make it better.
+Located in Austin TX from Tom Glenn High School, ARCTURUS brings together students working in software, hardware, CAD, strategy, and business to design, build, and compete with robots in the *FIRST* Robotics Competition. Every season is an engineering problem: we design, prototype, test, analyze, and iterate until it works — and then we make it better.
 
 ## Subteams
 
@@ -46,8 +46,8 @@ No subsystem is finished on the first try. We define the problem, build a protot
 
 | Season | Robot | Events | Status      |
 | :----: | :---: | :----: | ----------- |
-| 2027   | TBD   | TBD    | In progress |
-| 2026   | TBD   | TBD    | —           |
+| 2026   | TBD   | TBD    | _           |
+| 2027   | TBD   | TBD    | —           |
 
 ## Outreach
 
