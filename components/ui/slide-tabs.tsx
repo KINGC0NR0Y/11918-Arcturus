@@ -2,18 +2,15 @@
 
 /**
  * SlideTabs — adapted from a community "slide tabs" pattern (sliding pill
- * cursor + mix-blend-difference label) into a real, router-aware nav:
- * - Tabs are next/link anchors, not local-state-only buttons, so they
- *   navigate and support keyboard/middle-click/etc. like any link.
- * - The pill snaps to whichever tab matches the current pathname (not just
- *   "last clicked"), including on first load and on back/forward nav.
- * - Colors swapped for ARCTURUS's tokens: an ink-900 pill against a white
- *   pill-track border, matching the navbar surface instead of generic
- *   black/white.
+ * cursor) into a real, router-aware nav:
+ * - Tabs are next/link anchors, so they navigate and support
+ *   keyboard/middle-click/etc. like any link.
+ * - The pill snaps to whichever tab matches the current pathname, including on
+ *   first load and on back/forward nav.
  * - Skips the spring animation under prefers-reduced-motion.
  */
 
-import { primaryNavItems } from "@/lib/data/nav";
+import { isItemActive, navItems } from "@/lib/data/nav";
 import { cn } from "@/lib/utils";
 import { motion, useReducedMotion } from "framer-motion";
 import Link from "next/link";
@@ -32,9 +29,7 @@ export function SlideTabs({ className }: { className?: string }) {
   const [position, setPosition] = useState<CursorPosition>({ left: 0, width: 0, opacity: 0 });
   const tabsRef = useRef<Array<HTMLLIElement | null>>([]);
 
-  const activeIndex = primaryNavItems.findIndex((item) =>
-    item.href === "/" ? pathname === "/" : pathname.startsWith(item.href)
-  );
+  const activeIndex = navItems.findIndex((item) => isItemActive(item, pathname));
 
   const snapToActive = () => {
     const tab = tabsRef.current[activeIndex];
@@ -57,12 +52,9 @@ export function SlideTabs({ className }: { className?: string }) {
   return (
     <ul
       onMouseLeave={snapToActive}
-      className={cn(
-        "relative flex w-fit items-center rounded-full p-1",
-        className
-      )}
+      className={cn("relative flex w-fit items-center rounded-full p-1", className)}
     >
-      {primaryNavItems.map((item, i) => (
+      {navItems.map((item, i) => (
         <Tab
           key={item.href}
           ref={(el) => {

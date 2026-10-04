@@ -314,6 +314,22 @@ export interface DitherProps {
   mouseRadius?: number;
   /** Optional: element that receives pointer events (for canvases behind content). */
   eventSource?: HTMLElement;
+  /** Render scale. Below 1 renders fewer pixels (much cheaper); the canvas is upscaled with hard edges. */
+  dpr?: number;
+  /** Cap on animation frames per second. Omit for the display's refresh rate. */
+  maxFps?: number;
+}
+
+/** Drives a `frameloop="demand"` canvas at a capped rate, pausing while the tab is hidden. */
+function FrameLimiter({ fps }: { fps: number }) {
+  const invalidate = useThree((s) => s.invalidate);
+  useEffect(() => {
+    const id = window.setInterval(() => {
+      if (!document.hidden) invalidate();
+    }, 1000 / fps);
+    return () => window.clearInterval(id);
+  }, [fps, invalidate]);
+  return null;
 }
 
 export default function Dither({
@@ -324,19 +340,28 @@ export default function Dither({
   colorNum = 4,
   pixelSize = 2,
   disableAnimation = false,
-  enableMouseInteraction = true,
+  enableMouseInteraction = false,
   mouseRadius = 1,
   eventSource,
+  dpr = 1,
+  maxFps,
 }: DitherProps) {
   return (
     <Canvas
       className="dither-container"
-      style={{ width: "100%", height: "100%", position: "relative" }}
+      style={{
+        width: "100%",
+        height: "100%",
+        position: "relative",
+        ...(dpr < 1 ? { imageRendering: "pixelated" as const } : {}),
+      }}
       camera={{ position: [0, 0, 6] }}
-      dpr={1}
-      gl={{ antialias: true }}
+      dpr={dpr}
+      frameloop={maxFps ? "demand" : "always"}
+      gl={{ antialias: false, powerPreference: "high-performance" }}
       {...(eventSource ? { eventSource, eventPrefix: "client" as const } : {})}
     >
+      {maxFps ? <FrameLimiter fps={maxFps} /> : null}
       <DitheredWaves
         waveSpeed={waveSpeed}
         waveFrequency={waveFrequency}

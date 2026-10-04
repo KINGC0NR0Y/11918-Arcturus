@@ -1,20 +1,32 @@
+import Image from "next/image";
 import type { Sponsor } from "@/lib/types";
 import { cn } from "@/lib/utils";
 
+/**
+ * Sponsor card. Every card shares one fixed aspect ratio; logos are
+ * object-contain'd inside it so any logo shape stays uniform in size.
+ */
 export function SponsorMark({ sponsor, className }: { sponsor: Sponsor; className?: string }) {
-  const content = (
-    <span
-      className={cn(
-        "flex h-full w-full items-center justify-center px-5 py-6 text-center font-display text-base font-bold tracking-tight text-ink-200 transition-colors duration-300 group-hover:text-orange-400 sm:text-lg",
-        className
-      )}
-    >
+  const cardClass = cn(
+    "group relative block aspect-[3/2] w-full overflow-hidden rounded-3xl border border-white/15 bg-neutral-200 transition-all duration-300 hover:-translate-y-1 hover:border-orange-400/70 hover:shadow-xl hover:shadow-orange-500/10",
+    className
+  );
+
+  const content = sponsor.logo ? (
+    <Image
+      src={sponsor.logo}
+      alt={sponsor.name}
+      fill
+      sizes="(min-width: 640px) 288px, 240px"
+      quality={90}
+      draggable={false}
+      className="object-contain p-8 transition-transform duration-500 group-hover:scale-105"
+    />
+  ) : (
+    <span className="flex h-full w-full items-center justify-center px-5 text-center font-display text-lg font-bold tracking-tight text-ink-800">
       {sponsor.name}
     </span>
   );
-
-  const wrapperClass =
-    "group flex h-24 items-center justify-center rounded-sm border border-white/15 grayscale transition-all duration-300 hover:grayscale-0 hover:border-orange-400/60 hover:shadow-md hover:shadow-ink-900/5";
 
   if (sponsor.url) {
     return (
@@ -22,7 +34,7 @@ export function SponsorMark({ sponsor, className }: { sponsor: Sponsor; classNam
         href={sponsor.url}
         target="_blank"
         rel="noopener noreferrer"
-        className={wrapperClass}
+        className={cardClass}
         aria-label={sponsor.name}
       >
         {content}
@@ -31,7 +43,7 @@ export function SponsorMark({ sponsor, className }: { sponsor: Sponsor; classNam
   }
 
   return (
-    <div className={wrapperClass} aria-label={sponsor.name}>
+    <div className={cardClass} role="img" aria-label={sponsor.name}>
       {content}
     </div>
   );

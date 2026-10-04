@@ -1,31 +1,52 @@
-export interface NavItem {
+export interface NavChild {
   label: string;
   href: string;
 }
 
-// Full site map — used by the footer ("Quick Links") and the sitemap, so
-// every page stays reachable and crawlable even though the navbar itself
-// only surfaces a handful of them.
+/** A top-level page. `sections` are anchors within that page (used by the footer). */
+export interface NavItem {
+  label: string;
+  href: string;
+  sections?: NavChild[];
+}
+
+// Single source of truth for the navbar, the footer columns and the sitemap.
 export const navItems: NavItem[] = [
   { label: "Home", href: "/" },
-  { label: "About", href: "/about" },
+  {
+    label: "Robot",
+    href: "/robot",
+    sections: [
+      { label: "Current Robot", href: "/robot#current-robot" },
+      { label: "Systems", href: "/robot#systems" },
+      { label: "Specifications", href: "/robot#specifications" },
+    ],
+  },
   { label: "Team", href: "/team" },
-  { label: "Robot", href: "/robot" },
-  { label: "Engineering", href: "/engineering" },
-  { label: "Competitions", href: "/competitions" },
-  { label: "Outreach", href: "/outreach" },
-  { label: "Sponsors", href: "/sponsors" },
-  { label: "Join Us", href: "/join" },
-  { label: "News", href: "/news" },
-  { label: "Gallery", href: "/gallery" },
-  { label: "Contact", href: "/contact" },
+  {
+    label: "Engineering",
+    href: "/engineering",
+    sections: [
+      { label: "Mechanical", href: "/engineering#mechanical" },
+      { label: "Electrical", href: "/engineering#electrical" },
+      { label: "Software", href: "/engineering#software" },
+      { label: "CAD", href: "/engineering#cad" },
+    ],
+  },
+  {
+    label: "Journey",
+    href: "/journey",
+    sections: [
+      { label: "Seasons", href: "/journey#seasons" },
+      { label: "Competitions", href: "/journey#competitions" },
+      { label: "Gallery", href: "/journey#gallery" },
+    ],
+  },
 ];
 
-// Trimmed set shown in the navbar itself (desktop pill tabs + mobile menu).
-// Everything else lives in the footer's Quick Links.
-export const primaryNavItems: NavItem[] = [
-  { label: "Home", href: "/" },
-  { label: "Outreach", href: "/outreach" },
-  { label: "About", href: "/about" },
-  { label: "Team", href: "/team" },
-];
+/** Every real page — used by the sitemap. */
+export const allPages: NavChild[] = navItems.map(({ label, href }) => ({ label, href }));
+
+export function isItemActive(item: NavItem, pathname: string): boolean {
+  return item.href === "/" ? pathname === "/" : pathname.startsWith(item.href);
+}

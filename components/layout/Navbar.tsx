@@ -4,6 +4,7 @@ import { Logomark } from "@/components/layout/Logomark";
 import { MobileMenu } from "@/components/layout/MobileMenu";
 import { Container } from "@/components/ui/Container";
 import { SlideTabs } from "@/components/ui/slide-tabs";
+import { teamInfo } from "@/lib/data/social";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -22,20 +23,29 @@ export function Navbar() {
     setMenuOpen(false);
   }
 
+  const isHome = pathname === "/";
+
   // Slide the navbar away when scrolling down, bring it back when scrolling up.
   useEffect(() => {
     let lastY = window.scrollY;
     const onScroll = () => {
       const y = window.scrollY;
       const delta = y - lastY;
-      if (y < 80) setHidden(false);
+      // On the home page, stay visible through the hero and About landing before auto-hiding.
+      const hideAfter = isHome ? window.innerHeight * 1.3 : 80;
+      if (y < hideAfter) setHidden(false);
       else if (delta > 6) setHidden(true);
       else if (delta < -6) setHidden(false);
-      if (Math.abs(delta) > 6 || y < 80) lastY = y;
+      if (Math.abs(delta) > 6 || y < hideAfter) lastY = y;
     };
+    onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
+    window.addEventListener("resize", onScroll);
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("resize", onScroll);
+    };
+  }, [isHome]);
 
   const offscreen = hidden && !menuOpen;
 
@@ -44,7 +54,7 @@ export function Navbar() {
     <header
       className={cn(
         "sticky top-0 z-50 w-full pt-3 transition-transform duration-300 ease-out motion-reduce:transition-none sm:pt-4",
-        offscreen && "-translate-y-full"
+        offscreen && "pointer-events-none -translate-y-full"
       )}
     >
       <Container className="relative">
@@ -54,7 +64,7 @@ export function Navbar() {
             className="flex items-center gap-2.5 text-white"
             aria-label="ARCTURUS #11918 home"
           >
-            <Logomark className="h-8 w-8 text-orange-500" />
+            <Logomark className="h-10 w-10" />
             <span className="font-display text-lg font-bold leading-none tracking-tight">
               ARCTURUS
               <span className="ml-1.5">#11918</span>
@@ -66,12 +76,12 @@ export function Navbar() {
           </nav>
 
           <div className="hidden lg:block">
-            <Link
-              href="/join"
+            <a
+              href={`mailto:${teamInfo.email}`}
               className="inline-flex items-center rounded-sm border-2 border-white px-5 py-2 text-sm font-semibold uppercase tracking-wide text-white transition-colors hover: hover:text-black"
             >
               Join Us
-            </Link>
+            </a>
           </div>
 
           <button

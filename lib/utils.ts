@@ -3,7 +3,6 @@ export function cn(...classes: Array<string | false | null | undefined>): string
 }
 
 const subteamStyles: Record<string, string> = {
-  Leadership: "bg-orange-500/15 text-orange-400 ring-orange-200",
   Software: "bg-blue-500/15 text-blue-300 ring-blue-200",
   Hardware: "bg-white/10 text-ink-100 ring-white/25",
   CAD: "bg-blue-500/15 text-blue-300 ring-blue-200",

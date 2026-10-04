@@ -65,7 +65,7 @@ export const Footer7 = ({
               ))}
             </ul>
           </div>
-          <div className="grid w-full gap-8 sm:grid-cols-3 lg:gap-16">
+          <div className="grid w-full grid-cols-2 gap-8 lg:grid-cols-4 lg:gap-10">
             {sections.map((section) => (
               <div key={section.title}>
                 <h3 className="mb-4 font-mono-tech text-xs font-medium uppercase tracking-[0.2em] text-white">

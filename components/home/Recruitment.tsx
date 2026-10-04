@@ -1,13 +1,13 @@
 import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
 import { Reveal } from "@/components/ui/Reveal";
-import { joinAreas } from "@/lib/data/values";
+import { teamInfo } from "@/lib/data/social";
 
 export function Recruitment() {
   return (
-    <section className=" py-20 sm:py-28">
-      <Container className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2">
-        <Reveal>
+    <section className="py-20 sm:py-28">
+      <Container className="flex justify-center">
+        <Reveal className="flex max-w-2xl flex-col items-center text-center">
           <p className="mb-3 font-mono-tech text-xs uppercase tracking-[0.3em] text-orange-400">
             Get Involved
           </p>
@@ -19,22 +19,10 @@ export function Recruitment() {
             a place on ARCTURUS for whatever you&apos;re good at.
           </p>
           <div className="mt-8">
-            <Button href="/join" variant="primary">
+            <Button href={`mailto:${teamInfo.email}`} variant="primary">
               Join ARCTURUS
             </Button>
           </div>
-        </Reveal>
-
-        <Reveal delay={120} className="grid grid-cols-2 gap-3 sm:grid-cols-3">
-          {joinAreas.map((area, i) => (
-            <div
-              key={area}
-              className="flex aspect-square flex-col items-center justify-center gap-1 rounded-sm border border-white/15 p-3 text-center transition-colors duration-300 hover:border-orange-400/60 hover:bg-orange-500/15"
-              style={{ transitionDelay: `${i * 20}ms` }}
-            >
-              <span className="font-display text-sm font-bold text-ink-50">{area}</span>
-            </div>
-          ))}
         </Reveal>
       </Container>
     </section>

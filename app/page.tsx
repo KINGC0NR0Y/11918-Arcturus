@@ -1,25 +1,20 @@
-import { EngineeringGrid } from "@/components/home/EngineeringGrid";
+import { AboutSection } from "@/components/home/AboutSection";
 import { Hero } from "@/components/home/Hero";
-import { NewsPreview } from "@/components/home/NewsPreview";
-import { OutreachPreview } from "@/components/home/OutreachPreview";
-import { ProcessTimeline } from "@/components/home/ProcessTimeline";
+import { MissionSection } from "@/components/home/MissionSection";
 import { Recruitment } from "@/components/home/Recruitment";
-import { RobotPreview } from "@/components/home/RobotPreview";
 import { SponsorStrip } from "@/components/home/SponsorStrip";
-import { TeamPreview } from "@/components/home/TeamPreview";
+import { TeamPictures } from "@/components/home/TeamPictures";
 
 export default function HomePage() {
   return (
     <>
+      <span data-snap-page hidden />
       <Hero />
-      <TeamPreview />
-      <RobotPreview />
-      <EngineeringGrid />
-      <ProcessTimeline />
-      <OutreachPreview />
+      <AboutSection />
+      <TeamPictures />
+      <MissionSection />
       <SponsorStrip />
       <Recruitment />
-      <NewsPreview />
     </>
   );
 }

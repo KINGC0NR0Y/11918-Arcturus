@@ -15,7 +15,7 @@ export default function TeamPage() {
       <PageHeader
         eyebrow="Our Roster"
         title="The Students of ARCTURUS"
-        description={`${teamMembers.length} students across software, hardware, CAD, business, and strategy — each bringing something different to the team.`}
+        description={`${teamMembers.length} students across software, hardware, CAD, and business — each bringing something different to the team.`}
       />
 
       <section className=" py-16 sm:py-24">

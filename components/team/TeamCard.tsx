@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Badge } from "@/components/ui/Badge";
 import type { TeamMember } from "@/lib/types";
 
@@ -21,18 +22,29 @@ export function TeamCard({ member }: { member: TeamMember }) {
             Lead
           </span>
         )}
-        <div className="absolute inset-0 flex items-center justify-center">
-          <span className="font-display text-4xl font-bold text-white/90 transition-transform duration-300 group-hover:scale-110">
-            {initials(member.name)}
-          </span>
-        </div>
+        {member.image ? (
+          <Image
+            src={member.image}
+            alt={member.name}
+            fill
+            sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw"
+            quality={90}
+            className="object-cover object-top transition-transform duration-500 group-hover:scale-105"
+          />
+        ) : (
+          <div className="absolute inset-0 flex items-center justify-center">
+            <span className="font-display text-4xl font-bold text-white/90 transition-transform duration-300 group-hover:scale-110">
+              {initials(member.name)}
+            </span>
+          </div>
+        )}
       </div>
       <div className="flex flex-1 flex-col gap-3 p-5">
         <div>
           <h3 className="font-display text-base font-bold text-white">{member.name}</h3>
           <p className="mt-0.5 text-sm font-medium text-orange-400">{member.role}</p>
         </div>
-        <div className="mt-auto flex flex-wrap gap-1.5">
+        <div className="flex flex-wrap gap-1.5">
           {member.subteams.map((s) => (
             <Badge key={s}>{s}</Badge>
           ))}

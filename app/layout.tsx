@@ -1,3 +1,4 @@
+import { LoadingScreen } from "@/components/layout/LoadingScreen";
 import { Footer } from "@/components/layout/Footer";
 import { Navbar } from "@/components/layout/Navbar";
 import { SiteBackground } from "@/components/layout/SiteBackground";
@@ -59,14 +60,12 @@ export const metadata: Metadata = {
       "A student-led engineering organization from Tom Glenn High School — software, hardware, CAD, strategy, and competition.",
     creator: teamInfo.x.handle,
   },
-  icons: {
-    icon: "/icon.svg",
-  },
 };
 
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "Organization",
+  logo: `${siteUrl}/logo.png`,
   name: "ARCTURUS #11918",
   url: siteUrl,
   email: teamInfo.email,
@@ -92,6 +91,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       className={`${spaceGrotesk.variable} ${inter.variable} ${jetbrainsMono.variable}`}
     >
       <body className="flex min-h-screen flex-col text-white antialiased">
+        <LoadingScreen />
+        <noscript>
+          <style>{"#site-loader{display:none!important}"}</style>
+        </noscript>
         <a
           href="#main-content"
           className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-100 focus:rounded-sm focus:bg-orange-500 focus:px-4 focus:py-2 focus:text-sm focus:font-semibold focus:text-ink-950"

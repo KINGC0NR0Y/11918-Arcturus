@@ -5,20 +5,23 @@ import { teamInfo } from "@/lib/data/social";
 import { FaInstagram, FaTwitter } from "react-icons/fa";
 import { SiGmail } from "react-icons/si";
 
-// Every existing page stays linked, just grouped into three columns.
-const link = (label: string) => {
+const parent = (label: string) => {
   const item = navItems.find((i) => i.label === label);
-  if (!item) throw new Error(`Missing nav item: ${label}`);
-  return { name: item.label, href: item.href };
+  if (!item?.sections) throw new Error(`Missing nav item: ${label}`);
+  return { title: item.label, links: item.sections.map((c) => ({ name: c.label, href: c.href })) };
 };
 
 const sections = [
-  { title: "Explore", links: ["Home", "About", "Team", "Robot"].map(link) },
   {
-    title: "Compete",
-    links: ["Engineering", "Competitions", "Outreach", "Sponsors"].map(link),
+    title: "Explore",
+    links: [
+      { name: "Home", href: "/" },
+      { name: "Team", href: "/team" },
+    ],
   },
-  { title: "More", links: ["Join Us", "News", "Gallery", "Contact"].map(link) },
+  parent("Robot"),
+  parent("Engineering"),
+  parent("Journey"),
 ];
 
 export function Footer() {
@@ -28,7 +31,7 @@ export function Footer() {
     <Footer7
       logo={{
         url: "/",
-        icon: <Logomark className="h-8 w-8 text-orange-500" />,
+        icon: <Logomark className="h-10 w-10" />,
         title: <>ARCTURUS #{teamInfo.number}</>,
       }}
       description={

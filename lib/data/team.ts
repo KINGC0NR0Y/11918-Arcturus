@@ -1,4 +1,4 @@
-import type { TeamMember } from "@/lib/types";
+﻿import type { TeamMember } from "@/lib/types";
 
 /**
  * Official ARCTURUS #11918 roster.
@@ -8,34 +8,38 @@ import type { TeamMember } from "@/lib/types";
 export const teamMembers: TeamMember[] = [
   {
     id: "advik-venkatesh",
+    image: "/team/advik-venkatesh.jpg",
     name: "Advik Venkatesh",
     role: "Co-Captain",
-    subteams: ["Leadership", "Software", "CAD"],
+    subteams: ["Software", "CAD"],
     isLead: true,
   },
   {
     id: "pratyush-kulkarni",
     name: "Pratyush Kulkarni",
     role: "Co-Captain",
-    subteams: ["Leadership", "Business", "Software", "Hardware"],
+    subteams: ["Business", "Software", "Hardware"],
     isLead: true,
   },
   {
     id: "aadithri-woddi",
+    image: "/team/aadithri-woddi.jpg",
     name: "Aadithri Woddi",
     role: "Strategy Lead",
-    subteams: ["Leadership", "Business"],
+    subteams: ["Business"],
     isLead: true,
   },
   {
     id: "jay-rohan-surappagari",
+    image: "/team/jay-rohan-surappagari.jpg",
     name: "Jay Rohan Surappagari",
     role: "Secretary",
-    subteams: ["Leadership", "Business", "Software"],
+    subteams: ["Business", "Software"],
     isLead: true,
   },
   {
     id: "akshit-algubelli",
+    image: "/team/akshit-algubelli.jpg",
     name: "Akshit Algubelli",
     role: "Team Member",
     subteams: ["Business", "Software"],
@@ -46,13 +50,6 @@ export const teamMembers: TeamMember[] = [
     name: "Bhoumik Vamalur",
     role: "Team Member",
     subteams: ["Hardware"],
-    isLead: false,
-  },
-  {
-    id: "srikar-yella",
-    name: "Srikar Yella",
-    role: "Team Member",
-    subteams: ["Business", "Software", "Hardware", "CAD"],
     isLead: false,
   },
   {
@@ -68,6 +65,7 @@ export const teamMembers: TeamMember[] = [
     role: "Team Member",
     subteams: ["Hardware"],
     isLead: false,
+    image: "/team/jaideep-krothapalli.jpg",
   },
   {
     id: "jaiden-luke-jenson",
@@ -91,10 +89,26 @@ export const teamMembers: TeamMember[] = [
     isLead: false,
   },
   {
-    id: "raghuram-jandhyam",
-    name: "Raghuram Jandhyam",
+    id: "sai-raghuram-jandhyam",
+    image: "/team/sai-raghuram-jandhyam.jpg",
+    name: "Sai Raghuram Jandhyam",
     role: "Team Member",
     subteams: ["Business", "Software", "Hardware"],
+    isLead: false,
+  },
+  {
+    id: "satvik-thakur",
+    image: "/team/satvik-thakur-3.jpg",
+    name: "Satvik Thakur",
+    role: "Team Member",
+    subteams: ["Software", "Business", "Web Developer"],
+    isLead: false,
+  },
+  {
+    id: "srikar-yella",
+    name: "Srikar Yella",
+    role: "Team Member",
+    subteams: ["Business", "Software", "Hardware", "CAD"],
     isLead: false,
   },
   {
@@ -115,13 +129,3 @@ export const teamMembers: TeamMember[] = [
 
 export const teamLeads = teamMembers.filter((m) => m.isLead);
 export const teamRoster = teamMembers.filter((m) => !m.isLead);
-
-export const subteamFilters = [
-  "All",
-  "Leadership",
-  "Software",
-  "Hardware",
-  "CAD",
-  "Business",
-  "Strategy",
-] as const;

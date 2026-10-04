@@ -1,12 +1,12 @@
 export type Subteam =
-  | "Leadership"
   | "Software"
   | "Hardware"
   | "CAD"
   | "Business"
   | "Strategy"
   | "Outreach"
-  | "Media";
+  | "Media"
+  | "Web Developer";
 
 export interface TeamMember {
   id: string;

@@ -1,10 +1,15 @@
 import { ImageResponse } from "next/og";
+import { readFile } from "node:fs/promises";
+import { join } from "node:path";
 
 export const alt = "ARCTURUS #11918 | Tom Glenn High School Robotics";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
-export default function OpengraphImage() {
+export default async function OpengraphImage() {
+  const logo = await readFile(join(process.cwd(), "public", "logo.png"));
+  const logoSrc = `data:image/png;base64,${logo.toString("base64")}`;
+
   return new ImageResponse(
     (
       <div
@@ -46,10 +51,12 @@ export default function OpengraphImage() {
             alignItems: "center",
           }}
         >
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src={logoSrc} width={170} height={170} alt="" style={{ marginBottom: 8 }} />
           <div
             style={{
               display: "flex",
-              fontSize: 108,
+              fontSize: 88,
               fontWeight: 700,
               color: "#f4f6f9",
               letterSpacing: -2,
@@ -71,7 +78,7 @@ export default function OpengraphImage() {
           <div
             style={{
               display: "flex",
-              marginTop: 28,
+              marginTop: 20,
               fontSize: 24,
               letterSpacing: 10,
               textTransform: "uppercase",

@@ -1,13 +1,13 @@
-import { navItems } from "@/lib/data/nav";
+import { allPages } from "@/lib/data/nav";
 import type { MetadataRoute } from "next";
 
 const siteUrl = "https://arcturus11918.org";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  return navItems.map((item) => ({
-    url: `${siteUrl}${item.href === "/" ? "" : item.href}`,
+  return allPages.map((page) => ({
+    url: `${siteUrl}${page.href === "/" ? "" : page.href}`,
     lastModified: new Date(),
-    changeFrequency: item.href === "/" || item.href === "/news" ? "weekly" : "monthly",
-    priority: item.href === "/" ? 1 : 0.7,
+    changeFrequency: page.href === "/" ? "weekly" : "monthly",
+    priority: page.href === "/" ? 1 : 0.7,
   }));
 }

@@ -47,6 +47,7 @@
   --animate-fade-up: fade-up 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
   --animate-fade-in: fade-in 0.6s ease-out forwards;
   --animate-marquee: marquee 32s linear infinite;
+  --animate-float: float 7s ease-in-out infinite;
   --animate-shine: shine var(--duration) infinite linear;
 
   @keyframes fade-up {
@@ -76,6 +77,15 @@
     }
     to {
       background-position: 0% 0%;
+    }
+  }
+  @keyframes float {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-14px);
     }
   }
   @keyframes marquee {
@@ -221,5 +231,79 @@ h6 {
 @media (prefers-reduced-motion: reduce) {
   .shine-border-ring::before {
     animation: none;
+  }
+}
+
+/* ---- Hero "Enter Domain" scroll cue ---- */
+.enter-cue {
+  color: #fff;
+  text-shadow: 0 0 24px rgb(255 100 23 / 0.6);
+}
+.enter-cue-line {
+  position: relative;
+  display: block;
+  width: 1px;
+  height: 64px;
+  background: linear-gradient(to bottom, rgb(255 255 255 / 0.5), transparent);
+  overflow: hidden;
+}
+.enter-cue-line::after {
+  content: "";
+  position: absolute;
+  left: -1px;
+  top: 0;
+  width: 3px;
+  height: 18px;
+  border-radius: 9999px;
+  background: var(--color-orange-500);
+  box-shadow: 0 0 12px var(--color-orange-500);
+  animation: cue-drop 1.8s cubic-bezier(0.65, 0, 0.35, 1) infinite;
+}
+.enter-cue-chevrons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: -6px;
+  color: var(--color-orange-400);
+}
+.enter-cue-chevrons svg {
+  width: 22px;
+  height: 22px;
+  margin-top: -9px;
+  animation: cue-chevron 1.8s ease-in-out infinite;
+}
+.enter-cue-chevrons svg:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.enter-cue:hover .enter-cue-chevrons {
+  color: #fff;
+}
+@keyframes cue-drop {
+  0% {
+    transform: translateY(-20px);
+  }
+  100% {
+    transform: translateY(66px);
+  }
+}
+@keyframes cue-chevron {
+  0%,
+  100% {
+    opacity: 0.25;
+    transform: translateY(0);
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(5px);
+  }
+}
+
+/* ---- Home page: the hero and About are full-screen sections (native scrolling) ---- */
+@media (min-width: 1024px) and (min-height: 640px) {
+  html:has([data-snap-page]) .snap-section {
+    min-height: 100svh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
 }
