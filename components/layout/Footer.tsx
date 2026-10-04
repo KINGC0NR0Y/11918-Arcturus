@@ -36,9 +36,7 @@ export function Footer() {
       }}
       description={
         <>
-          <p className="font-mono-tech text-xs uppercase tracking-[0.3em] text-orange-400">
-            {teamInfo.tagline}
-          </p>
+          <p className="eyebrow">{teamInfo.tagline}</p>
           <p className="mt-3">
             {teamInfo.school} &middot; {teamInfo.city}
           </p>

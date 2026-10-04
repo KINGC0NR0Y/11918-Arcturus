@@ -52,7 +52,7 @@ export function SlideTabs({ className }: { className?: string }) {
   return (
     <ul
       onMouseLeave={snapToActive}
-      className={cn("relative flex w-fit items-center rounded-full p-1", className)}
+      className={cn("relative flex w-fit items-center border border-line bg-panel p-1", className)}
     >
       {navItems.map((item, i) => (
         <Tab
@@ -94,7 +94,7 @@ const Tab = forwardRef<
       <Link
         href={href}
         aria-current={active ? "page" : undefined}
-        className="relative block whitespace-nowrap px-4 py-2 text-sm font-semibold uppercase tracking-wide text-white"
+        className="relative block whitespace-nowrap px-4 py-2 font-mono-tech text-xs font-medium uppercase tracking-[0.18em] text-white"
       >
         {children}
       </Link>
@@ -108,7 +108,7 @@ function Cursor({ position, animate }: { position: CursorPosition; animate: bool
     <motion.li
       animate={{ left: position.left, width: position.width, opacity: position.opacity }}
       transition={animate ? { type: "spring", stiffness: 420, damping: 34 } : { duration: 0 }}
-      className="absolute inset-y-1 z-0 rounded-full border-2 border-white"
+      className="absolute inset-y-1 z-0 border border-orange-500 bg-orange-500/15"
       aria-hidden="true"
     />
   );

@@ -7,11 +7,11 @@ export function Recruitment() {
   return (
     <section className="py-20 sm:py-28">
       <Container className="flex justify-center">
-        <Reveal className="flex max-w-2xl flex-col items-center text-center">
-          <p className="mb-3 font-mono-tech text-xs uppercase tracking-[0.3em] text-orange-400">
-            Get Involved
+        <Reveal className="panel corner-ticks tick-orange flex max-w-3xl flex-col items-center px-6 py-14 text-center sm:px-16">
+          <p className="mb-4">
+            <span className="eyebrow">07 / Get Involved</span>
           </p>
-          <h2 className="text-balance font-display text-3xl font-bold text-white sm:text-4xl">
+          <h2 className="title-rule text-balance font-display text-3xl font-bold text-white sm:text-4xl">
             Build Something Bigger.
           </h2>
           <p className="mt-4 max-w-md text-base leading-relaxed text-ink-300 sm:text-lg">

@@ -22,10 +22,8 @@ export function TbdCard({
   return (
     <div
       className={cn(
-        "relative flex flex-col items-start gap-3 rounded-sm border border-dashed p-6",
-        tone === "dark"
-          ? "border-ink-600 bg-ink-900/60 text-ink-200"
-          : "border-white/20 bg-white/5 text-ink-300",
+        "panel flex flex-col items-start gap-3 border-dashed p-6",
+        tone === "dark" ? "text-ink-200" : "text-ink-300",
         className
       )}
     >

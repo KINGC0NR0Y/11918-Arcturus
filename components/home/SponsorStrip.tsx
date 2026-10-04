@@ -11,10 +11,10 @@ const HALVES = [0, 1] as const;
 
 export function SponsorStrip() {
   return (
-    <section className="overflow-hidden border-y border-white/15 py-20 sm:py-28">
+    <section className="overflow-hidden border-y border-line bg-panel/60 py-20 sm:py-28">
       <Container>
         <div className="flex flex-col items-start justify-between gap-6 sm:flex-row sm:items-end">
-          <SectionHeader eyebrow="Our Partners" title="Powered by Our Partners" />
+          <SectionHeader eyebrow="06 / Our Partners" title="Powered by Our Partners" />
           <Reveal delay={80}>
             <Button href={`mailto:${teamInfo.email}?subject=Sponsoring%20ARCTURUS`} variant="ghost">
               Become a Sponsor

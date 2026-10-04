@@ -8,7 +8,7 @@ import { cn } from "@/lib/utils";
  */
 export function SponsorMark({ sponsor, className }: { sponsor: Sponsor; className?: string }) {
   const cardClass = cn(
-    "group relative block aspect-[3/2] w-full overflow-hidden rounded-3xl border border-white/15 bg-neutral-200 transition-all duration-300 hover:-translate-y-1 hover:border-orange-400/70 hover:shadow-xl hover:shadow-orange-500/10",
+    "group panel corner-ticks panel-hover block aspect-[3/2] w-full overflow-hidden bg-white! bg-none!",
     className
   );
 

@@ -40,6 +40,12 @@
 
   --color-paper: #ffffff;
 
+  /* Dither-HUD surface tokens: hairlines are a pale blue, panels a deep navy. */
+  --ease-steps: steps(3, end);
+  --color-line: rgb(130 170 255 / 0.3);
+  --color-line-strong: rgb(130 170 255 / 0.6);
+  --color-panel: rgb(3 9 24 / 0.78);
+
   --font-display: var(--font-space-grotesk), "Segoe UI", sans-serif;
   --font-body: var(--font-inter), "Segoe UI", sans-serif;
   --font-mono-tech: var(--font-jetbrains-mono), ui-monospace, monospace;
@@ -103,11 +109,23 @@
 }
 
 * {
-  border-color: rgb(255 255 255 / 0.15);
+  border-color: var(--color-line);
 }
 
 html {
   scroll-behavior: smooth;
+}
+
+/* No text-insertion caret on static content; form fields get theirs back. */
+html,
+body,
+body * {
+  caret-color: transparent;
+}
+input,
+textarea,
+[contenteditable="true"] {
+  caret-color: var(--color-orange-500);
 }
 
 body {
@@ -234,70 +252,6 @@ h6 {
   }
 }
 
-/* ---- Hero "Enter Domain" scroll cue ---- */
-.enter-cue {
-  color: #fff;
-  text-shadow: 0 0 24px rgb(255 100 23 / 0.6);
-}
-.enter-cue-line {
-  position: relative;
-  display: block;
-  width: 1px;
-  height: 64px;
-  background: linear-gradient(to bottom, rgb(255 255 255 / 0.5), transparent);
-  overflow: hidden;
-}
-.enter-cue-line::after {
-  content: "";
-  position: absolute;
-  left: -1px;
-  top: 0;
-  width: 3px;
-  height: 18px;
-  border-radius: 9999px;
-  background: var(--color-orange-500);
-  box-shadow: 0 0 12px var(--color-orange-500);
-  animation: cue-drop 1.8s cubic-bezier(0.65, 0, 0.35, 1) infinite;
-}
-.enter-cue-chevrons {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: -6px;
-  color: var(--color-orange-400);
-}
-.enter-cue-chevrons svg {
-  width: 22px;
-  height: 22px;
-  margin-top: -9px;
-  animation: cue-chevron 1.8s ease-in-out infinite;
-}
-.enter-cue-chevrons svg:nth-child(2) {
-  animation-delay: 0.2s;
-}
-.enter-cue:hover .enter-cue-chevrons {
-  color: #fff;
-}
-@keyframes cue-drop {
-  0% {
-    transform: translateY(-20px);
-  }
-  100% {
-    transform: translateY(66px);
-  }
-}
-@keyframes cue-chevron {
-  0%,
-  100% {
-    opacity: 0.25;
-    transform: translateY(0);
-  }
-  50% {
-    opacity: 1;
-    transform: translateY(5px);
-  }
-}
-
 /* ---- Home page: the hero and About are full-screen sections (native scrolling) ---- */
 @media (min-width: 1024px) and (min-height: 640px) {
   html:has([data-snap-page]) .snap-section {
@@ -306,4 +260,92 @@ h6 {
     flex-direction: column;
     justify-content: center;
   }
+}
+
+
+/* =====================================================================
+   Dither-HUD design language
+   The site background is a hard-edged, 4-colour pixel dither, so every
+   surface follows it: square corners, 1px pale-blue hairlines, a faint
+   4px stipple, hard offset shadows (never soft blur), corner ticks and
+   monospace labels.
+   ===================================================================== */
+
+/* Solid navy surface with a stipple that echoes the dither grid. */
+.panel {
+  position: relative;
+  background-color: var(--color-panel);
+  background-image: radial-gradient(rgb(130 170 255 / 0.12) 1px, transparent 1px);
+  background-size: 4px 4px;
+  border: 1px solid var(--color-line);
+  box-shadow: 6px 6px 0 rgb(0 0 0 / 0.5);
+}
+
+/* Four corner ticks. --tick sets the colour (pale blue by default). */
+.corner-ticks {
+  position: relative;
+}
+.corner-ticks::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 10;
+  pointer-events: none;
+  --tick: rgb(130 170 255);
+  background:
+    linear-gradient(var(--tick), var(--tick)) top left / var(--tl, 14px) var(--tw, 2px) no-repeat,
+    linear-gradient(var(--tick), var(--tick)) top left / var(--tw, 2px) var(--tl, 14px) no-repeat,
+    linear-gradient(var(--tick), var(--tick)) top right / var(--tl, 14px) var(--tw, 2px) no-repeat,
+    linear-gradient(var(--tick), var(--tick)) top right / var(--tw, 2px) var(--tl, 14px) no-repeat,
+    linear-gradient(var(--tick), var(--tick)) bottom left / var(--tl, 14px) var(--tw, 2px) no-repeat,
+    linear-gradient(var(--tick), var(--tick)) bottom left / var(--tw, 2px) var(--tl, 14px) no-repeat,
+    linear-gradient(var(--tick), var(--tick)) bottom right / var(--tl, 14px) var(--tw, 2px) no-repeat,
+    linear-gradient(var(--tick), var(--tick)) bottom right / var(--tw, 2px) var(--tl, 14px) no-repeat;
+  transition: --tick 0.2s;
+}
+.corner-ticks.tick-orange::after,
+.group:hover > .corner-ticks::after,
+.group:hover.corner-ticks::after {
+  --tick: var(--color-orange-500);
+}
+
+/* Interactive panels lift on a hard step, like a pixel button press. */
+.panel-hover {
+  transition: transform 0.15s steps(3), box-shadow 0.15s steps(3), border-color 0.15s;
+}
+.panel-hover:hover {
+  transform: translate(-3px, -3px);
+  box-shadow: 9px 9px 0 rgb(0 0 0 / 0.5);
+  border-color: var(--color-orange-500);
+}
+
+/* Section label: mono caps. */
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-family: var(--font-mono-tech);
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--color-orange-400);
+}
+
+/* Heading with a stepped pixel underline. */
+.title-rule::after {
+  content: "";
+  display: block;
+  width: 72px;
+  height: 4px;
+  margin-top: 1.25rem;
+  background: repeating-linear-gradient(
+    to right,
+    var(--color-orange-500) 0 8px,
+    transparent 8px 12px
+  );
+}
+.text-center .title-rule::after,
+.title-rule.text-center::after {
+  margin-inline: auto;
 }

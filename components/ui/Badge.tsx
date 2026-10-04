@@ -11,7 +11,7 @@ export function Badge({
   return (
     <span
       className={cn(
-        "inline-flex items-center rounded-full px-2.5 py-1 text-[11px] font-semibold uppercase tracking-wide ring-1 ring-inset",
+        "inline-flex items-center border px-2 py-1 font-mono-tech text-[10px] font-medium uppercase tracking-[0.15em]",
         subteamClass(children),
         className
       )}

@@ -36,15 +36,15 @@ export function MobileMenu({
 
   const linkClass = (active: boolean) =>
     cn(
-      "rounded-sm px-3 py-3 text-base font-medium",
-      active ? "bg-orange-500/15 text-orange-400" : "text-ink-100 hover:bg-white/10"
+      "border-l-2 px-3 py-3 font-mono-tech text-sm uppercase tracking-[0.18em]",
+      active ? "border-orange-500 bg-orange-500/15 text-orange-400" : "border-transparent text-ink-100 hover:border-line-strong hover:bg-white/5"
     );
 
   return (
     <div
       id="mobile-menu"
       className={cn(
-        "pointer-events-auto absolute inset-x-0 top-0 z-40 mt-2 origin-top overflow-hidden rounded-lg border border-white/15 bg-ink-950/85 shadow-xl shadow-black/30 backdrop-blur-xl lg:hidden",
+        "pointer-events-auto absolute inset-x-0 top-0 z-40 mt-2 origin-top overflow-hidden border border-line-strong bg-ink-950/95 shadow-[6px_6px_0_0_rgb(0_0_0/0.5)] lg:hidden",
         "transition-[grid-template-rows] duration-300 ease-out",
         "grid",
         open ? "grid-rows-[1fr]" : "grid-rows-[0fr]"
@@ -66,7 +66,7 @@ export function MobileMenu({
           <a
             href={`mailto:${teamInfo.email}`}
             onClick={onClose}
-            className="mt-3 inline-flex items-center justify-center rounded-sm border-2 border-white px-5 py-3 text-sm font-semibold uppercase tracking-wide text-white"
+            className="mt-3 inline-flex items-center justify-center border border-orange-500 bg-orange-500 px-5 py-3 font-mono-tech text-xs font-medium uppercase tracking-[0.2em] text-ink-950"
           >
             Join Us
           </a>

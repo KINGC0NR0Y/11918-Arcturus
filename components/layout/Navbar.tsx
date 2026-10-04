@@ -65,7 +65,7 @@ export function Navbar() {
             aria-label="ARCTURUS #11918 home"
           >
             <Logomark className="h-10 w-10" />
-            <span className="font-display text-lg font-bold leading-none tracking-tight">
+            <span className="font-mono-tech text-sm font-medium uppercase leading-none tracking-[0.18em]">
               ARCTURUS
               <span className="ml-1.5">#11918</span>
             </span>
@@ -78,7 +78,7 @@ export function Navbar() {
           <div className="hidden lg:block">
             <a
               href={`mailto:${teamInfo.email}`}
-              className="inline-flex items-center rounded-sm border-2 border-white px-5 py-2 text-sm font-semibold uppercase tracking-wide text-white transition-colors hover: hover:text-black"
+              className="inline-flex items-center border border-orange-500 bg-orange-500 px-5 py-2.5 font-mono-tech text-xs font-medium uppercase tracking-[0.2em] text-ink-950 shadow-[4px_4px_0_0_rgb(0_0_0/0.55)] transition-[transform,box-shadow] duration-150 ease-steps hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0_0_rgb(0_0_0/0.55)]"
             >
               Join Us
             </a>
@@ -87,7 +87,7 @@ export function Navbar() {
           <button
             type="button"
             onClick={() => setMenuOpen((v) => !v)}
-            className="inline-flex h-10 w-10 items-center justify-center rounded-sm text-white lg:hidden"
+            className="inline-flex h-10 w-10 items-center justify-center border border-line bg-panel text-white lg:hidden"
             aria-label={menuOpen ? "Close menu" : "Open menu"}
             aria-expanded={menuOpen}
             aria-controls="mobile-menu"

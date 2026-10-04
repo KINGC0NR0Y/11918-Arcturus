@@ -7,10 +7,10 @@ export default function NotFound() {
     <section className="relative flex min-h-[70vh] items-center overflow-hidden">
       <DitherBackground fade />
       <Container className="relative text-center">
-        <p className="font-mono-tech text-sm uppercase tracking-[0.35em] text-orange-400">
-          Error 404
+        <p>
+          <span className="eyebrow">Error 404</span>
         </p>
-        <h1 className="mt-4 font-display text-4xl font-bold text-white sm:text-5xl">
+        <h1 className="title-rule mt-4 font-display text-4xl font-bold text-white sm:text-5xl">
           This page isn&apos;t on the roster.
         </h1>
         <p className="mx-auto mt-4 max-w-md text-base text-ink-300">

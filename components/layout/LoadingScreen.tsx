@@ -111,7 +111,7 @@ export function LoadingScreen() {
         height={180}
         priority
         quality={90}
-        className="h-36 w-36 rounded-full shadow-2xl shadow-black/60 sm:h-44 sm:w-44"
+        className="h-36 w-36 rounded-full sm:h-44 sm:w-44"
       />
 
       <div className="w-64 sm:w-80">
@@ -120,10 +120,10 @@ export function LoadingScreen() {
           aria-valuemin={0}
           aria-valuemax={100}
           aria-valuenow={progress}
-          className="h-1.5 w-full overflow-hidden rounded-full bg-white/10"
+          className="h-3 w-full overflow-hidden border border-line-strong bg-panel p-0.5"
         >
           <div
-            className="h-full rounded-full bg-orange-500"
+            className="h-full bg-orange-500"
             style={{ width: `${progress}%` }}
           />
         </div>

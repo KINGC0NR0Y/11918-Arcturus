@@ -25,20 +25,13 @@ export function SectionHeader({
       )}
     >
       {eyebrow && (
-        <div
-          className={cn(
-            "mb-3 flex items-center gap-2 font-mono-tech text-xs uppercase tracking-[0.25em]",
-            tone === "dark" ? "text-orange-400" : "text-orange-400",
-            align === "center" && "justify-center"
-          )}
-        >
-          <span className="h-px w-6 bg-current" aria-hidden="true" />
-          {eyebrow}
+        <div className={cn("mb-4", align === "center" && "flex justify-center")}>
+          <span className="eyebrow">{eyebrow}</span>
         </div>
       )}
       <h2
         className={cn(
-          "text-balance text-3xl font-bold sm:text-4xl",
+          "title-rule text-balance text-3xl font-bold sm:text-4xl",
           tone === "dark" ? "text-white" : "text-white"
         )}
       >

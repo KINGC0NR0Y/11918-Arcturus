@@ -3,31 +3,38 @@ import { Container } from "@/components/ui/Container";
 import { Reveal } from "@/components/ui/Reveal";
 
 const LOREM =
-  "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.";
+  "ARCTURUS #11918 is a FIRST Robotics Competition team based in Austin, TX at Tom Glenn High School. We bring together students passionate about robotics, engineering, and teamwork to design, build, and compete with innovative robots. Through every season, we challenge ourselves to solve complex problems, learn from failure, and continuously improve our designs. More than just a robotics team, ARCTURUS is a community of students working together to build, compete, and inspire the next generation of engineers.";
 
 export function AboutSection() {
   return (
     <section id="about" className="snap-section scroll-mt-16 py-20 sm:py-28">
-      <Container className="grid grid-cols-1 items-center gap-12 lg:grid-cols-[minmax(0,360px)_1fr] lg:gap-16">
-        <Reveal className="flex justify-center">
-          <Image
-            src="/logo.png"
-            alt="ARCTURUS #11918 FTC Robotics logo"
-            width={360}
-            height={360}
-            quality={90}
-            className="h-auto w-56 rounded-full shadow-2xl shadow-black/50 sm:w-72 lg:w-full"
-          />
+      <Container className="flex flex-col gap-10">
+        <Reveal>
+          <p className="mb-4">
+            <span className="eyebrow">01 / About</span>
+          </p>
+          <h2 className="title-rule text-balance font-display text-3xl font-bold text-white sm:text-5xl">
+            Guided by stars, driven by innovation.
+          </h2>
         </Reveal>
 
-        <div className="flex flex-col gap-8 text-left">
-          <Reveal>
-            <h2 className="text-balance font-display text-3xl font-bold text-white sm:text-5xl">
-              Guided by stars, driven by innovation.
-            </h2>
+        {/* Both panels sit in one row and stretch to the same height. */}
+        <div className="grid grid-cols-1 gap-8 lg:grid-cols-[320px_1fr] lg:items-stretch lg:gap-10">
+          <Reveal className="flex">
+            <div className="panel corner-ticks tick-orange flex w-full items-center justify-center p-6">
+              <Image
+                src="/logo.png"
+                alt="ARCTURUS #11918 FTC Robotics logo"
+                width={360}
+                height={360}
+                quality={90}
+                className="h-auto w-full max-w-72 rounded-full"
+              />
+            </div>
           </Reveal>
-          <Reveal delay={100}>
-            <div className="rounded-3xl border border-white/15 bg-ink-950/40 p-8 backdrop-blur-sm sm:p-10">
+
+          <Reveal delay={100} className="flex">
+            <div className="panel corner-ticks flex w-full items-center p-8 sm:p-10">
               <p className="text-base leading-relaxed text-ink-200 sm:text-lg">{LOREM}</p>
             </div>
           </Reveal>

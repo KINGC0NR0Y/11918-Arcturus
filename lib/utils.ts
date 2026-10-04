@@ -3,15 +3,15 @@ export function cn(...classes: Array<string | false | null | undefined>): string
 }
 
 const subteamStyles: Record<string, string> = {
-  Software: "bg-blue-500/15 text-blue-300 ring-blue-200",
-  Hardware: "bg-white/10 text-ink-100 ring-white/25",
-  CAD: "bg-blue-500/15 text-blue-300 ring-blue-200",
-  Business: "bg-orange-500/15 text-orange-400 ring-orange-200",
-  Strategy: "bg-white/10 text-ink-100 ring-white/25",
-  Outreach: "bg-orange-500/15 text-orange-400 ring-orange-200",
-  Media: "bg-blue-500/15 text-blue-300 ring-blue-200",
+  Software: "border-blue-300/50 bg-blue-500/20 text-blue-200",
+  Hardware: "border-line-strong bg-white/5 text-ink-100",
+  CAD: "border-blue-300/50 bg-blue-500/20 text-blue-200",
+  Business: "border-orange-500/60 bg-orange-500/15 text-orange-300",
+  Strategy: "border-line-strong bg-white/5 text-ink-100",
+  Outreach: "border-orange-500/60 bg-orange-500/15 text-orange-300",
+  Media: "border-blue-300/50 bg-blue-500/20 text-blue-200",
 };
 
 export function subteamClass(subteam: string): string {
-  return subteamStyles[subteam] ?? "bg-white/10 text-ink-100 ring-white/25";
+  return subteamStyles[subteam] ?? "border-line-strong bg-white/5 text-ink-100";
 }

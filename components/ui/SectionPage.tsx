@@ -44,7 +44,7 @@ export function SectionPage({
           <section key={section.id} id={section.id} className="scroll-mt-24">
             <Container className="flex flex-col gap-8">
               <Reveal>
-                <h2 className="font-display text-3xl font-bold text-white sm:text-4xl">
+                <h2 className="title-rule font-display text-3xl font-bold text-white sm:text-4xl">
                   {section.title}
                 </h2>
                 <p className="mt-3 max-w-2xl text-base leading-relaxed text-ink-300">
@@ -58,7 +58,7 @@ export function SectionPage({
                     <Reveal
                       key={fact.label}
                       delay={i * 40}
-                      className="rounded-sm border border-white/15 p-5"
+                      className="panel p-5"
                     >
                       <dt className="font-mono-tech text-[10px] uppercase tracking-[0.2em] text-ink-300">
                         {fact.label}

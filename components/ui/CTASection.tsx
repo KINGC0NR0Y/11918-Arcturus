@@ -23,19 +23,11 @@ export function CTASection({
   return (
     <section className="relative overflow-hidden py-20 sm:py-28">
       <DitherBackground fade />
-      <div
-        className="absolute -right-24 -top-24 h-72 w-72 rounded-full bg-orange-500/20 blur-3xl"
-        aria-hidden="true"
-      />
-      <div
-        className="absolute -bottom-24 -left-24 h-72 w-72 rounded-full bg-blue-500/20 blur-3xl"
-        aria-hidden="true"
-      />
       <Container className="relative text-center">
         <Reveal>
           {eyebrow && (
-            <p className="mb-3 font-mono-tech text-xs uppercase tracking-[0.3em] text-orange-400">
-              {eyebrow}
+            <p className="mb-4">
+              <span className="eyebrow">{eyebrow}</span>
             </p>
           )}
           <h2 className="text-balance mx-auto max-w-2xl text-3xl font-bold text-white sm:text-4xl">

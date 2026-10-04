@@ -18,11 +18,11 @@ export function PageHeader({
     <section className="relative overflow-hidden pb-16 pt-16 sm:pb-20 sm:pt-20">
       <DitherBackground fade />
       <Container className="relative">
-        <Reveal className="font-mono-tech text-xs uppercase tracking-[0.35em] text-orange-400">
-          {eyebrow}
+        <Reveal>
+          <span className="eyebrow">{eyebrow}</span>
         </Reveal>
         <Reveal delay={60}>
-          <h1 className="text-balance mt-3 max-w-3xl font-display text-4xl font-bold text-white sm:text-5xl">
+          <h1 className="title-rule text-balance mt-4 max-w-3xl font-display text-4xl font-bold text-white sm:text-5xl">
             {title}
           </h1>
         </Reveal>

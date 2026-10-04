@@ -14,11 +14,11 @@ function initials(name: string) {
 
 export function TeamCard({ member }: { member: TeamMember }) {
   return (
-    <article className="group relative flex flex-col overflow-hidden rounded-sm border border-white/15 transition-all duration-300 hover:-translate-y-1 hover:border-orange-400/60 hover:shadow-xl hover:shadow-ink-900/5">
+    <article className="group panel corner-ticks panel-hover flex flex-col overflow-hidden">
       <div className="relative aspect-[4/3] w-full overflow-hidden bg-ink-900">
         <div className="bg-grid-dark-fine absolute inset-0 opacity-50" aria-hidden="true" />
         {member.isLead && (
-          <span className="absolute left-3 top-3 z-10 rounded-full bg-orange-500 px-2.5 py-1 text-[10px] font-bold uppercase tracking-wide text-ink-950">
+          <span className="absolute left-3 top-3 z-10 bg-orange-500 px-2 py-1 font-mono-tech text-[10px] font-medium uppercase tracking-[0.18em] text-ink-950 shadow-[2px_2px_0_0_rgb(0_0_0/0.5)]">
             Lead
           </span>
         )}
@@ -29,7 +29,7 @@ export function TeamCard({ member }: { member: TeamMember }) {
             fill
             sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw"
             quality={90}
-            className="object-cover object-top transition-transform duration-500 group-hover:scale-105"
+            className="object-cover object-top"
           />
         ) : (
           <div className="absolute inset-0 flex items-center justify-center">
@@ -42,7 +42,7 @@ export function TeamCard({ member }: { member: TeamMember }) {
       <div className="flex flex-1 flex-col gap-3 p-5">
         <div>
           <h3 className="font-display text-base font-bold text-white">{member.name}</h3>
-          <p className="mt-0.5 text-sm font-medium text-orange-400">{member.role}</p>
+          <p className="mt-1 font-mono-tech text-[11px] uppercase tracking-[0.15em] text-orange-400">{member.role}</p>
         </div>
         <div className="flex flex-wrap gap-1.5">
           {member.subteams.map((s) => (
