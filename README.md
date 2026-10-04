@@ -2,7 +2,7 @@
 
 # ARCTURUS · FRC #11918
 
-**Engineering Beyond the Horizon.**
+**Guided by stars, driven by innovation**
 
 A student-led *FIRST* Robotics Competition team from Austin, Texas.
 
@@ -68,5 +68,5 @@ Unless otherwise noted, software in this repository is maintained by ARCTURUS #1
 ---
 
 <div align="center">
-<sub>ARCTURUS #11918 · Austin, Texas · <i>Build the future. Reach beyond.</i></sub>
+<sub>ARCTURUS #11918 · Austin, Texas · <i>Guided by stars, driven by innovation</i></sub>
 </div>
