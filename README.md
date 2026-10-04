@@ -1,6 +1,6 @@
 # 🚀 ARCTURUS #11918
 
-### **Engineering Beyond the Horizon.**
+### **Guided by stars, driven by innovation**
 
 <p align="center">
   <strong>FIRST Robotics Competition Team #11918</strong><br>
