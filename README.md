@@ -2,8 +2,6 @@
 
 # ARCTURUS · FRC #11918
 
-**Guided by stars, driven by innovation**
-
 A student-led *FIRST* Robotics Competition team from Austin, Texas.
 
 [![Instagram](https://img.shields.io/badge/Instagram-@11918.arcturus-E4405F?logo=instagram&logoColor=white)](https://instagram.com/11918.arcturus)
