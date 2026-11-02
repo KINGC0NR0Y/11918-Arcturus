@@ -47,6 +47,7 @@ export const teamMembers: TeamMember[] = [
   },
   {
     id: "bhoumik-vamalur",
+    image: "/team/bhoumik-vamalur-framed.jpg",
     name: "Bhoumik Vamalur",
     role: "Team Member",
     subteams: ["Hardware"],
@@ -54,6 +55,7 @@ export const teamMembers: TeamMember[] = [
   },
   {
     id: "gurutej-bandla",
+    image: "/team/gurutej-bandla-centered.jpg",
     name: "Gurutej Bandla",
     role: "Team Member",
     subteams: ["Software"],
@@ -69,6 +71,7 @@ export const teamMembers: TeamMember[] = [
   },
   {
     id: "jaiden-luke-jenson",
+    image: "/team/jaiden-luke-jenson-framed.jpg",
     name: "Jaiden Luke Jenson",
     role: "Team Member",
     subteams: ["Hardware"],
@@ -76,6 +79,7 @@ export const teamMembers: TeamMember[] = [
   },
   {
     id: "landon-gordon",
+    image: "/team/landon-gordon-framed.jpg",
     name: "Landon Gordon",
     role: "Team Member",
     subteams: ["CAD"],

@@ -14,8 +14,7 @@ export interface TeamMember {
   role: string;
   subteams: Subteam[];
   isLead: boolean;
-  image?: string; // path in /public, optional — falls back to monogram
-}
+  image?: string; // path in /public, optional — falls back to monogram}
 
 export interface Sponsor {
   id: string;

@@ -8,8 +8,8 @@ export const teamInfo = {
   city: "Austin, Texas",
   email: "ftcgrizzlybots@gmail.com",
   instagram: {
-    handle: "@11918.grizzlybots.arcturus",
-    url: "https://www.instagram.com/11918.grizzlybots.arcturus/",
+    handle: "@11918.arcturus",
+    url: "https://www.instagram.com/11918.arcturus/",
   },
   x: {
     handle: "@GlennHSRobotics",
