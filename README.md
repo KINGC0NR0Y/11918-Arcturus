@@ -1,63 +1,70 @@
-# ARCTURUS #11918 — Team Website
+<div align="center">
 
-The public website for **ARCTURUS #11918**, a student robotics team at Tom Glenn
-High School (Leander, TX). Built with Next.js (App Router), TypeScript, and
-Tailwind CSS v4.
+# ARCTURUS · FRC #11918
 
-## Getting started
+A student-led *FIRST* Robotics Competition team from Austin, Texas.
 
-```bash
-npm install
-npm run dev       # http://localhost:3000
-npm run build     # production build
-npm run start     # serve the production build
-npm run lint      # ESLint
+[![Instagram](https://img.shields.io/badge/Instagram-@11918.arcturus-E4405F?logo=instagram&logoColor=white)](https://instagram.com/11918.arcturus)
+[![X](https://img.shields.io/badge/X-@GlennHSRobotics-000000?logo=x&logoColor=white)](https://x.com/GlennHSRobotics)
+[![Email](https://img.shields.io/badge/Email-Contact%20Us-0A66C2?logo=gmail&logoColor=white)](mailto:ftcgrizzlybots@gmail.com)
+
+</div>
+
+---
+
+## About
+
+Located in Austin TX from Tom Glenn High School, ARCTURUS brings together students working in software, hardware, CAD, strategy, and business to design, build, and compete with robots in the *FIRST* Robotics Competition. Every season is an engineering problem: we design, prototype, test, analyze, and iterate until it works — and then we make it better.
+
+## Subteams
+
+| Subteam      | Focus                                              |
+| ------------ | -------------------------------------------------- |
+| **Software** | Robot code, autonomous routines, computer vision   |
+| **Hardware** | Mechanical systems, electrical, fabrication        |
+| **CAD**      | 3D design, prototyping, engineering drawings       |
+| **Strategy** | Match analysis, scouting, game strategy            |
+| **Business** | Sponsorships, outreach, branding                   |
+
+## Tech Stack
+
+- **Languages:** Java, Python, JavaScript / TypeScript
+- **Robotics:** WPILib, path planning, real-time control, computer vision
+- **Engineering:** CAD, mechanical and electrical design, manufacturing
+
+## How We Work
+
+```
+Design  →  Build  →  Test  →  Analyze  →  Iterate
 ```
 
-## Updating content
+No subsystem is finished on the first try. We define the problem, build a prototype, push it to its limits, use data to find what's weak, and repeat.
 
-Almost everything visitor-facing is driven by plain data files under
-`lib/data/` — you generally never need to touch a component to update text,
-add a sponsor, or log a competition result.
+## Seasons
 
-| To update...              | Edit...                              |
-| -------------------------- | ------------------------------------- |
-| Team roster / leads        | `lib/data/team.ts`                    |
-| Sponsors                   | `lib/data/sponsors.ts`                |
-| Homepage stats             | `lib/data/stats.ts`                   |
-| Robot specs & subsystems   | `lib/data/robot.ts`                   |
-| Engineering sections/posts | `lib/data/engineering.ts`             |
-| Competition history        | `lib/data/competitions.ts`            |
-| Outreach stats & events    | `lib/data/outreach.ts`                |
-| News articles               | `lib/data/news.ts`                    |
-| Gallery photos              | `lib/data/gallery.ts` (+ files in `public/gallery/`) |
-| Contact / social info      | `lib/data/social.ts`                  |
-| Nav / footer links         | `lib/data/nav.ts`                     |
+| Season | Robot | Events | Status      |
+| :----: | :---: | :----: | ----------- |
+| 2026   | TBD   | TBD    | _           |
+| 2027   | TBD   | TBD    | —           |
 
-**Rule:** never invent a number, result, or spec. If it isn't known yet, leave
-the field as `"TBD"` — every page is built to render that state cleanly, and
-it's easy to search the codebase for `TBD` to see what's still outstanding.
+## Outreach
 
-### Adding photos
+Robotics doesn't end when the match does. ARCTURUS takes part in STEM outreach, education, and community events to bring more students into engineering and technology.
 
-Drop images into `public/` (e.g. `public/gallery/`, `public/team/`,
-`public/sponsors/`) and reference them by path in the relevant data file —
-`image` on a team member, `logo` on a sponsor, or a new entry in
-`lib/data/gallery.ts`.
+## Sponsors
 
-## Tech notes
+Thank you to the organizations that make our work possible:
 
-- **Next.js App Router** — one folder per route under `app/`.
-- **Tailwind CSS v4** — design tokens (colors, fonts, animation) are defined
-  in `app/globals.css` via `@theme`, not a `tailwind.config.js`.
-- **Fonts** — Space Grotesk (headings), Inter (body), JetBrains Mono
-  (technical labels), loaded via `next/font/google` in `app/layout.tsx`.
-- **No backend** — the contact form opens the visitor's email client via a
-  `mailto:` link rather than posting to a server. If the team later wants a
-  hosted inbox/CRM, swap `components/contact/ContactForm.tsx`'s submit
-  handler for an API route.
-- **`components/tech/TechText.tsx`** — the animated hero wordmark, adapted
-  from an open-source React Bits component into a plain client component.
+**Gene Haas Foundation** · **Subaru** · **Qualcomm** · **Polymaker** · **FRCtees** · **Firefly Aerospace** · **Fabworks** · **OnlineMetals.com**
 
-See `docs/PROJECT-PLAN.md` for the season rollout plan and team
-responsibilities this site was originally built against.
+Interested in supporting the team? [Reach out by email](mailto:ftcgrizzlybots@gmail.com).
+
+## License
+
+Unless otherwise noted, software in this repository is maintained by ARCTURUS #11918. See individual directories for project-specific licenses.
+
+---
+
+<div align="center">
+<sub>ARCTURUS #11918 · Austin, Texas · <i>Guided by stars, driven by innovation</i></sub>
+</div>
